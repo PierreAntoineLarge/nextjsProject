@@ -20,9 +20,16 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { useState } from "react";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    setColor(color == false ? true : false);
+  };
 
   return (
     <Box>
@@ -72,11 +79,13 @@ export default function WithSubnavigation() {
           spacing={6}
         >
           <Button
+            bg={color == false ? "green.400" : "red.400"}
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
             href={"#"}
+            onClick={changeColor}
           >
             Sign In
           </Button>
