@@ -1,5 +1,6 @@
 import LargeWithAppLinksAndSocial from "@/components/Footer";
 import WithSubnavigation from "@/components/navbar";
+import Success from "@/components/Success";
 import Head from "next/head";
 import { NextPageContext } from "next";
 
@@ -15,6 +16,7 @@ export default function Home(props: any) {
       </Head>
       <main>
         <WithSubnavigation />
+        <Success title={props.data.toto} />
       </main>
     </>
   );
